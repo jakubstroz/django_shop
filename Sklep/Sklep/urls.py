@@ -22,5 +22,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('kategoria/<id>/',one_category,name='dupa'),
     path('kategorie/',categories,name='dupas'),
-    path('produkty/<id>/',one_product,name='produkt')
+    path('produkt/<id>/',one_product,name='produkt')
 ]

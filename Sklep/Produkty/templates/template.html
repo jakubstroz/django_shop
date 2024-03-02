@@ -1,7 +1,19 @@
 
     <h1> WITAJ W SKLEPIE </h1>
-    {% for category in categories %}
+    <div>
+    <h1>  LOGO            wyszukiwarka          wyloguj </h1>
+    </div>
+    <div style="clear:both"></div>
+    <div style="width:200px; float:left">
+        <h4> KATEGORIE </h4>
+        {% for category in categories %}
 
-    <p><a href = "kategoria/{{category.id}}"> {{category.name}} </a> </p>
+        <p><a href = "http://localhost:8000/kategoria/{{category.id}}"> {{category.name}} </a> </p>
 
-    {% endfor %}
+        {% endfor %}
+    </div>
+    <div style="width:700; float:left">
+        {% block category_view %} {% endblock category_view %}
+        {% block product_view %} {% endblock product_view %}
+    </div>
+    <div style="clear:both"></div>

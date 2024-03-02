@@ -1,0 +1,21 @@
+    {% extends "template.html" %}
+    {%block category_view%}
+
+    {% if one_category%}   
+       <center> <h1> {{one_category.name}}</h1></center>
+
+        {% for product in products %}
+            <div>
+                    <h4><a href = "http://localhost:8000/produkt/{{product.id}}"> {{product.name}} </a> </h4>
+<!--<p>                   <p> {{product.price}}</p>
+                    <p> {{product.producer}}</p>
+                    <p> {{product.description}}</p> </p>-->
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+        <p> Nie ma takiej kategorii. </p>
+    {% endif %}
+    
+    {%endblock category_view%}

@@ -1,0 +1,11 @@
+    {% extends "template.html" %}
+    {%block product_view%}
+    {% if one_product%}
+        <h1> {{one_product.name}}</h1>
+        <p> cena: {{one_product.price}}zł</p>
+        <p> producent: {{one_product.producer}}</p>
+        <p> opis: {{one_product.description}}</p>
+    {% else %}
+        <p> Nie ma takiego produktu. </p>
+    {% endif %}
+    {%endblock product_view%}
