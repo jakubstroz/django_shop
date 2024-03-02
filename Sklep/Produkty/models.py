@@ -29,5 +29,5 @@ class Product(models.Model):
     price = models.IntegerField()
     producer = models.ForeignKey(Producer,on_delete=models.CASCADE,null=True)
     def __str__(self) -> str:
-        return f"id {self.id} - {self.name} - cena: {self.price/100}zł "
+        return f"id {self.id} - {self.name} - cena: {self.price/100}zł, {self.category} "
     
