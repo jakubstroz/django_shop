@@ -20,6 +20,7 @@ from Produkty.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('kategorie/<id>/',categories,name='dupa'),
+    path('kategoria/<id>/',one_category,name='dupa'),
+    path('kategorie/',categories,name='dupas'),
     path('produkty/<id>/',one_product,name='produkt')
 ]

@@ -5,8 +5,12 @@ from .models import Product, Category
 # Create your views here.
 
 def index(request):
-    query = Product.objects.all()
-    return HttpResponse(query)
+    categories_query = Category.objects.all()
+    products_query = Product.objects.all()
+
+    categories_data = {'categories': categories_query}
+    products_data = {'products': products_query}
+    return render(request, 'template.html', categories_data)
 
 
 def one_product(request, id:int):
@@ -19,6 +23,13 @@ def one_product(request, id:int):
     return HttpResponse(output)
 
 
-def categories(request, id:int):
+def categories(request):
+    #query = Category.objects.get(pk=id) 
+    #return HttpResponse(query.name)
+    query = Category.objects.all()
+    data = {'kategorie': query}
+    return render(request,'template.html',data)
+
+def one_category(request, id):
     query = Category.objects.get(pk=id) 
     return HttpResponse(query.name)
